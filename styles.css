@@ -9,7 +9,7 @@ body {
     line-height: 1.6;
     background-image: url('arcana.jpg');
     background-blend-mode: overlay;
-    background-size: fit;
+    background-size: cover;
     background-position: top right;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -30,7 +30,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none; /* Add this line */
+    text-decoration: none;
+}
+
+/* Add this new class for the shop image link */
+.shop-link {
+    display: block;
+    width: 48%; /* Slightly less than 50% to account for any margins or padding */
+    text-decoration: none;
+}
+
+.shop-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover {
@@ -250,6 +264,156 @@ a:hover {
 
     .card.col-3 {
         grid-column: span 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+    }
+
+    .card-content {
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    .card.col-3 h1,
+    .card.col-3 p,
+    .card.col-3 ul {
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .card.col-3 ul {
+        text-align: left;
+        display: block;  
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;  
+    }
+
+    .media-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .shop-link {
+        display: block;
+        width: 48%; /* Slightly less than 50% to account for any margins or padding */
+        text-decoration: none;
+    }
+
+    .shop-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+        width: 48%; /* Match the shop-link width */
+        height: 500px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@keyframes logoGlow {
+    0%, 100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+/* Add these new styles for the navbar */
+.navbar {
+    background-color: #4f5939cc;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    font-family: 'Metamorphous', cursive;
+    color: #BF895A;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #8A8C46;
+    text-shadow: 0 0 5px rgba(191, 137, 90, 0.5);
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .card {
+        padding: 20px;
+        padding-right: 20px;
+    }
+
+    .logo {
+        width: 80%;
+    }
+
+    .navbar ul {
+        justify-content: space-around;
+    }
+
+    .navbar li {
+        margin: 0 5px;
+    }
+
+    .media-container {
+        flex-direction: column;
+    }
+
+    .shop-link {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .shop-image {
+        width: 100%;
+    }
+
+    iframe {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        width: 100%;
     }
 }
 
