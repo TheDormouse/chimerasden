@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-export default function Script() {
+export default function Flashlight() {
   useEffect(() => {
     const cards = document.querySelectorAll('.card');
 
